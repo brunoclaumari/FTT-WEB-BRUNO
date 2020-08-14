@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+    </style>
+    <script>
+        function addText() {
+            var tagInputNote = document.getElementById("inputNote");
+            var tagList = document.getElementById("tagList");
+            var tagInputColor = document.getElementById("inputColor");
+
+            console.log(tagInputNote.value, tagInputColor.value);
+
+            var tagLi = document.createElement("li");
+            tagLi.innerHTML = tagInputNote.value;
+            tagList.appendChild(tagLi);
+        }
+        
+        function setSkullSize() {
+            var tagSlider = document.getElementById("skullSlider");
+            var iconSkull = document.getElementById("iconSkull")
+
+            console.log(tagSlider.value);
+            iconSkull.style.fontSize = tagSlider.value + "px";
+        }
+        
+
+    </script>
+</head>
+
+<body>
+    <!-- Emmet: https://emmet.io/  #page>div.logo+ul#navigation>li*5>a{Item $}-->
+    <pre>
+
+    </pre>
+    <h1>FTT-APP Note</h1>
+    <p>
+        <input type="text" id="inputNote">
+        <input type="color" id="inputColor">
+        <button onclick=addText()>Salva</button>
+    </p>
+    <input onchange="setSkullSize();" type="range" min="30" max="300" value="500" class="slider" id="skullSlider">
+
+    <hr>
+    <div class="icon" id="iconSkull">☠</div>
+    <ul id="tagList">
+
+    </ul>
+
+    <p id="tagParagrafo">
+
+    </p>
+
+
+
+</body>
+
+</html>
